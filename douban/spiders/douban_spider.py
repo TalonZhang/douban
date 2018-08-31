@@ -10,6 +10,7 @@ class DoubanSpiderSpider(scrapy.Spider):
     # 入口url，扔进调度器
     start_urls = ['https://movie.douban.com/top250']
 
+    # 对数据进行解析
     def parse(self, response):
         # 循环电影条目
         movie_list = response.xpath("//div[@class='article']//ol[@class='grid_view']/li")
